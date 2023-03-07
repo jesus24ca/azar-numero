@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validar edad mayor</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<form>
+		<label for="nombre1">Nombre 1:</label>
+		<input type="text" id="nombre1" name="nombre1"><br>
+
+		<label for="edad1">.....Edad 1:      </label>
+		<input type="number" id="edad1" name="edad1"><br>
+
+		<label for="nombre2">Nombre 2:</label>
+		<input type="text" id="nombre2" name="nombre2"><br>
+
+		<label for="edad2">.....Edad 2:</label>
+		<input type="number" id="edad2" name="edad2"><br>
+
+		<label for="nombre3">Nombre 3:</label>
+		<input type="text" id="nombre3" name="nombre3"><br>
+
+		<label for="edad3">....Edad 3:</label>
+		<input type="number" id="edad3" name="edad3"><br>
+
+		<button type="button" onclick="validar()">Validar</button>
+	</form>
+
+	<p id="resultado"></p>
+    <style>
+        body{
+            background-image: url(imagen/sisa.jpg);
+            background-size: 50%;
+            text-align: center;
+            font-size:200%;
+            margin-top: 13%;
+        
+
+        }
+        label{
+            color: #00ff00;
+        }
+
+    </style>
+
+	<script>
+		function validar() {
+			// Obtener los valores de los campos de entrada
+			var nombre1 = document.getElementById("nombre1").value;
+			var edad1 = parseInt(document.getElementById("edad1").value);
+			var nombre2 = document.getElementById("nombre2").value;
+			var edad2 = parseInt(document.getElementById("edad2").value);
+			var nombre3 = document.getElementById("nombre3").value;
+			var edad3 = parseInt(document.getElementById("edad3").value);
+
+			// Comparar las edades para determinar cuál es la mayor
+			var mayor = "";
+			if (edad1 > edad2 && edad1 > edad3) {
+				mayor = nombre1;
+			} else if (edad2 > edad3) {
+				mayor = nombre2;
+			} else {
+				mayor = nombre3;
+			}
+
+			// Mostrar el resultado en la página
+			document.getElementById("resultado").innerHTML = "La persona de mayor edad es " + mayor;
+		}
+	</script>
+</body>
+</html>

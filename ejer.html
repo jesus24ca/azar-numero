@@ -1,0 +1,48 @@
+<!DOCTYPE html<!DOCTYPE html>
+<html>
+<head>
+	<title>Generar 3 números únicos</title>
+	<script>
+		function generarNumerosUnicos() {
+			let numerosUnicos = new Set(); // Creamos un conjunto para almacenar los números únicos
+			
+			while (numerosUnicos.size < 3) { // Generamos números hasta que tengamos 3 únicos
+				let numeroAleatorio = Math.floor(Math.random() * 99) + 1; // Generamos un número aleatorio entre 1 y 99
+				
+				numerosUnicos.add(numeroAleatorio); // Agregamos el número al conjunto
+			}
+			
+			document.getElementById("numeros").innerHTML = [...numerosUnicos]; // Mostramos los números únicos en la página
+		}
+	</script>
+</head>
+
+<body>
+    <style>
+        body{
+            background-image: url(imagen/sisave-.jpg);
+            background-size: 100%;
+            text-align: center;
+            font-size:200%;
+            margin-top: 20%;
+
+        }
+		.decorated-button {
+        background-color: #4CAF50; /* Color de fondo verde */
+        border: none; /* Sin borde */
+        color: black; /* Color de texto blanco */
+        padding: 12px 24px; /* Espacio interior del botón */
+        text-align: center; /* Texto centrado */
+        text-decoration: none; /* Sin subrayado */
+        display: inline-block; /* Mostrar como bloque en línea */
+        font-size: 16px; /* Tamaño de letra */
+        font-family: Arial, sans-serif; /* Fuente */
+        border-radius: 10px; /* Bordes redondeados */
+        }
+
+    </style>
+	<button class="decorated-button" onclick="generarNumerosUnicos()">Generar 3 números únicos</button>
+	<p id="numeros"></p>
+</body>
+</html>
+
